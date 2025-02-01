@@ -21,3 +21,7 @@ input[type="checkbox"],
 .text-handwriting {
     font-family: 'Ouvality', sans-serif;
 }
+
+.text-danger-600 {
+    color: #e3342f;
+}

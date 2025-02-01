@@ -1,6 +1,7 @@
 @php
     $containerClasses = 'text-center';
-    $titleClasses = 'text-4xl mb-4 text-handwriting text-orange-100';
+    //$titleClasses = 'text-4xl mb-4 text-handwriting text-orange-100';
+    $titleClasses = 'text-3xl font-semibold mb-4 text-orange-100';
     $textClasses = '';
 
     $items = [
@@ -55,8 +56,10 @@
             </div>
         @endforeach
     </div>
-    <div class="mt-12">
-        <x-button class="w-full" size="lg" type="primary" tag="a" href="#form">Принять приглашение</x-button>
-    </div>
+    @if ($guest && !$guest->formIsSubmitted())
+        <div class="mt-12">
+            <x-button class="w-full" size="lg" type="primary" tag="a" href="#form">Принять приглашение</x-button>
+        </div>
+    @endif
 </section>
 
