@@ -19,6 +19,8 @@ class WeddingForm extends Component implements HasForms
     public string $uuid = '';
     public array $persons = [];
 
+    public string $mode = 'pass';
+
     public function mount(Guest $guest): void
     {
         $this->uuid = $guest->uuid;
@@ -26,7 +28,10 @@ class WeddingForm extends Component implements HasForms
             ->keyBy('name')
             ->map(fn ($person) => $person->name)
             ->toArray();
-        $this->form->fill();
+        $this->form->fill($guest->form ?? []);
+        if ($guest->formIsSubmitted()) {
+            $this->mode = 'view';
+        }
     }
 
     public function form(Form $form): Form
@@ -118,7 +123,9 @@ class WeddingForm extends Component implements HasForms
     }
     public function render()
     {
-        return view('livewire.wedding-form');
+        return view('livewire.wedding-form' , [
+            'mode' => $this->mode,
+        ]);
     }
 
     public function submit()

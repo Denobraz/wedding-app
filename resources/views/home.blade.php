@@ -11,7 +11,7 @@
         @include('sections.header')
         @include('sections.hero')
         @include('sections.about')
-        @if($guest && !$guest->formIsSubmitted())
+        @if($guest)
             @include('sections.form')
         @endif
         @include('sections.schedule')

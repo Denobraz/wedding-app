@@ -28,8 +28,8 @@
 @endphp
 <section id="schedule" @class([
     'bg-orange-100 pb-12 px-4 text-black relative z-10',
-    'pt-20 mt-[-2.5rem]' => $guest && !$guest->formIsSubmitted(),
-    'pt-12' => $guest === null || $guest->formIsSubmitted(),
+    'pt-20 mt-[-2.5rem]' => $guest,
+    'pt-12' => $guest === null,
 ])>
     <h3 class="text-4xl text-center text-handwriting mb-12">Расписание</h3>
     @foreach($items as $item)
