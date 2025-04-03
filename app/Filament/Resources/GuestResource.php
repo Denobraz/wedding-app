@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\GuestResource\Pages;
 use App\Filament\Resources\GuestResource\RelationManagers;
+use App\Filament\Widgets\GuestCounts;
 use App\Models\Guest;
 use App\Models\GuestType;
 use Filament\Forms;
@@ -19,7 +20,7 @@ class GuestResource extends Resource
 
     protected static ?string $pluralLabel = 'Гости';
 
-    protected static ?string $navigationLabel = 'Гость';
+    protected static ?string $navigationLabel = 'Гости';
 
     protected static ?string $navigationIcon = 'heroicon-o-user';
 
@@ -91,6 +92,11 @@ class GuestResource extends Resource
                     ->label('ID')
                     ->sortable()
                     ->searchable(),
+                Tables\Columns\ImageColumn::make('image')
+                    ->label(false)
+                    ->height(50)
+                    ->width(50)
+                    ->circular(),
                 Tables\Columns\TextColumn::make('name')
                     ->searchable()
                     ->label('Имя')
