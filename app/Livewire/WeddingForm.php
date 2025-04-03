@@ -71,6 +71,8 @@ class WeddingForm extends Component implements HasForms
                         'required' => 'Поле обязательно для заполнения',
                     ])
                     ->required(),
+                Forms\Components\Textarea::make('allergy')
+                    ->label('Есть ли у вас аллергия на что-то?'),
                 Forms\Components\CheckboxList::make('alcohol_preference')
                     ->label('Какой алкоголь вы предпочитаете?')
                     ->options([
