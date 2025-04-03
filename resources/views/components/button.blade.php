@@ -17,6 +17,9 @@
 
     'bg-gray-500 text-black' => $type === 'secondary',
 
+    //telegram
+    'bg-blue-400 border-blue-400 text-white hover:bg-blue-300 hover:border-blue-300' => $type === 'telegram',
+
     'px-4 py-1' => $size === 'sm',
     'text-sm' => $size === 'sm',
 

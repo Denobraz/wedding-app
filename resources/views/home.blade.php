@@ -5,7 +5,7 @@
      */
 @endphp
 @extends('layouts.app')
-@section('title', 'Денис и Мария')
+@section('title', 'Свадьба Дениса и Маши')
 @section('content')
     <div class="max-w-[600px] mx-auto relative">
         @include('sections.header')

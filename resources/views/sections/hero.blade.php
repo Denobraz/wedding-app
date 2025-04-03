@@ -25,7 +25,10 @@
                     <img class="w-full h-full object-cover object-center" src="{{ url('storage/' . $guest->image) }}" alt="{{ $guest->displayName() }}">
                 @endif
             </div>
-            <div class="leading-5 text-center">
+            <div class="leading-5 text-center text-lg">
+                @if($guest->persons()->count())
+                    <div class="font-semibold">Дорогие</div>
+                @endif
                 <div class="font-semibold">{!! $guest->displayName() !!}</div>
                 <div class="text-orange-100 hidden">{{ $guest->email }}</div>
             </div>
