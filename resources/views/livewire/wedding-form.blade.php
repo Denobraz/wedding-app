@@ -1,7 +1,4 @@
 <div>
-    <p class="text-center text-lg font-bold mb-8">
-        Пожалуйста, ответьте на вопросы, <br> которые для вас подготовили <br> Жених и Невеста
-    </p>
     <form wire:submit="submit">
         {{ $this->form }}
 
