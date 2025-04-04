@@ -42,9 +42,9 @@ class WeddingForm extends Component implements HasForms
                     ->label('Потребуется ли вам трансфер из Коломны в Бережки-Холл?')
                     ->options([
                         'no' => 'Нет',
-                        'before' => 'Только до торжества',
-                        'after' => 'Только после торжества',
-                        'both' => 'И до и после торжества',
+                        'before' => 'Только до Бережков',
+                        'after' => 'Только после Бережков',
+                        'both' => 'Туда и обратно',
                     ])
                     ->validationMessages([
                         'required' => 'Поле обязательно для заполнения',
