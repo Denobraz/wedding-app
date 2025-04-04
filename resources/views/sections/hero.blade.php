@@ -18,22 +18,6 @@
         07.06.2025
     </p>
     <div class="mt-auto"></div>
-    @if($guest)
-        <div class="flex flex-col relative justify-center items-center mb-8">
-            <div class="bg-orange-100 mb-4 h-16 w-16 rounded-full overflow-hidden relative">
-                @if($guest->image)
-                    <img class="w-full h-full object-cover object-center" src="{{ url('storage/' . $guest->image) }}" alt="{{ $guest->displayName() }}">
-                @endif
-            </div>
-            <div class="leading-5 text-center text-lg">
-                @if($guest->persons()->count())
-                    <div class="font-semibold">Дорогие</div>
-                @endif
-                <div class="font-semibold">{!! $guest->displayName() !!}</div>
-                <div class="text-orange-100 hidden">{{ $guest->email }}</div>
-            </div>
-        </div>
-    @endif
     <div class="flex flex-col gap-4 relative justify-center">
         @if($guest)
             <x-button class="w-full flex items-center justify-center" size="lg" type="telegram" tag="a" href="https://t.me/+so5cBc4qNo8wNzY6" target="_blank">

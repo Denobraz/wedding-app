@@ -4,9 +4,17 @@
     $titleClasses = 'text-3xl font-semibold mb-4 text-orange-100';
     $textClasses = '';
 
+    $displayName = 'Уважаемые гости!';
+    if ($guest) {
+        $displayName = $guest->displayName();
+    }
+    if ($guest && $guest->persons()->count()) {
+        $displayName = 'Дорогие <br>' . $guest->displayName();
+    }
+
     $items = [
         [
-            'title' => 'Уважаемые гости!',
+            'title' => $displayName,
             'text' => 'Мы рады сообщить Вам, что 07.06.2025 состоится самое главное торжество в нашей жизни - день нашей свадьбы!'
         ],
         [
@@ -39,6 +47,20 @@
     ];
 @endphp
 <section id="about" class="py-12 px-4">
+    @if($guest)
+        <div class="flex flex-col relative justify-center items-center mb-0">
+            <div class="bg-orange-100 mb-4 h-16 w-16 rounded-full overflow-hidden relative">
+                @if($guest->image)
+                    <img class="w-full h-full object-cover object-center" src="{{ url('storage/' . $guest->image) }}" alt="{{ $guest->displayName() }}">
+                @endif
+            </div>
+            <!--
+            <div class="leading-5 text-center text-lg">
+                <div class="font-semibold">{!! $guest->displayName() !!}</div>
+            </div>
+            -->
+        </div>
+    @endif
     <div class="grid grid-cols-1 gap-12">
         @foreach($items as $item)
             <div @class([$containerClasses])>
