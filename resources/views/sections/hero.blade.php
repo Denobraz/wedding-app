@@ -45,9 +45,10 @@
         @endif
         @if ($guest && !$guest->formIsSubmitted())
             <!--<x-button size="lg" type="primary" tag="a" href="#form">Принять приглашение</x-button>-->
-        @elseif ($guest && $guest->formIsSubmitted())
-            <x-button size="lg" type="primary" tag="a" href="#form">Изменить решение</x-button>
         @endif
-        <x-button size="lg" type="primary-outline" tag="a" href="{{ route('calendar') }}">Добавить в календарь</x-button>
+        <x-button size="lg" type="primary" tag="a" href="{{ route('calendar') }}">Добавить в календарь</x-button>
+        @if ($guest && $guest->formIsSubmitted())
+            <x-button size="lg" type="primary-outline" tag="a" href="#form">Изменить решение</x-button>
+        @endif
     </div>
 </section>
