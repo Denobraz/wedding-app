@@ -39,7 +39,7 @@ class WeddingForm extends Component implements HasForms
         return $form
             ->schema([
                 Forms\Components\Radio::make('transfer')
-                    ->label('Потребуется ли вам трансфер?')
+                    ->label('Потребуется ли вам трансфер из Коломны в Бережки-Холл?')
                     ->options([
                         'no' => 'Нет',
                         'before' => 'Только до торжества',

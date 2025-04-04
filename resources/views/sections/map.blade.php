@@ -1,6 +1,6 @@
 <section id="map">
     <div class="px-4 text-center text-white pt-12">
-        <h5 class="text-4xl mb-4 text-handwriting text-orange-100">Адрес</h5>
+        <h5 class="text-4xl mb-4 text-handwriting text-orange-100">Адрес торжества</h5>
         <p class="mb-8">
             <span class="font-semibold">Бережки Холл</span> <br>
             Касимовское ш., 45а, Егорьевск

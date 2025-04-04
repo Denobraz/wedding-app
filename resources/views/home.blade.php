@@ -11,10 +11,10 @@
         @include('sections.header')
         @include('sections.hero')
         @include('sections.about')
+        @include('sections.schedule')
         @if($guest)
             @include('sections.form')
         @endif
-        @include('sections.schedule')
         @include('sections.map')
         @include('sections.footer')
     </div>
