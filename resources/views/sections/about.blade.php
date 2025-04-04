@@ -56,10 +56,12 @@
             </div>
         @endforeach
     </div>
+    <!--
     @if ($guest && !$guest->formIsSubmitted())
         <div class="mt-12">
             <x-button class="w-full" size="lg" type="primary" tag="a" href="#form">Принять приглашение</x-button>
         </div>
     @endif
+    -->
 </section>
 
