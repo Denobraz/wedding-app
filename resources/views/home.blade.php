@@ -5,7 +5,11 @@
      */
 @endphp
 @extends('layouts.app')
-@section('title', 'Свадьба Дениса и Маши')
+@if ($guest)
+    @section('title', 'Приглашение на свадьбу для гостей: ' . $guest->displayName())
+@else
+    @section('title', 'Свадьба Дениса и Маши')
+@endif
 @section('content')
     <div class="max-w-[600px] mx-auto relative">
         @include('sections.header')

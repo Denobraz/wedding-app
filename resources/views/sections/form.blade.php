@@ -2,9 +2,9 @@
     <p class="text-center text-lg font-bold mb-8">
         Пожалуйста, ответьте на вопросы, <br> которые для вас подготовили <br> Жених и Невеста
     </p>
-    @if($guest && $guest->persons()->count())
+    @if($guest && $guest->persons->count())
         <p class="mb-8 bg-orange-100 p-4 text-black rounded-lg">
-            Обратите внимание, что вы заполняете анкету за всех персон, а именно: <span class="font-semibold">{{ $guest->display_name }}</span>.
+            Обратите внимание, что вы заполняете анкету за всех персон, а именно: <span class="font-semibold">{{ $guest->displayName() }}</span>.
             Учтите это при ответе на вопросы.
         </p>
     @endif
