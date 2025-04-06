@@ -1,6 +1,5 @@
 @php
     $containerClasses = 'text-center';
-    //$titleClasses = 'text-4xl mb-4 text-handwriting text-orange-100';
     $titleClasses = 'text-3xl font-semibold mb-4 text-orange-100';
     $textClasses = '';
 
@@ -37,7 +36,6 @@
             'title' => 'Дресс-Код',
             'text' => 'Будем благодарны, если при выборе нарядов на наше торжество вы придержитесь следующей палитры (нежные, светлые, бежевые или розовые тона). Только не белый.',
             'colors' => [
-                //'#f4b99b',
                 '#fee9d3',
                 '#f5d3d9',
                 '#a1a473',
@@ -47,18 +45,11 @@
     ];
 @endphp
 <section id="about" class="py-12 px-4">
-    @if($guest)
+    @if($guest && $guest->image)
         <div class="flex flex-col relative justify-center items-center mb-0">
             <div class="bg-orange-100 mb-4 h-16 w-16 rounded-full overflow-hidden relative">
-                @if($guest->image)
-                    <img class="w-full h-full object-cover object-center" src="{{ url('storage/' . $guest->image) }}" alt="{{ $guest->displayName() }}">
-                @endif
+                <img class="w-full h-full object-cover object-center" src="{{ url('storage/' . $guest->image) }}" alt="{{ $guest->displayName() }}">
             </div>
-            <!--
-            <div class="leading-5 text-center text-lg">
-                <div class="font-semibold">{!! $guest->displayName() !!}</div>
-            </div>
-            -->
         </div>
     @endif
     <div class="grid grid-cols-1 gap-12">
@@ -78,12 +69,5 @@
             </div>
         @endforeach
     </div>
-    <!--
-    @if ($guest && !$guest->formIsSubmitted())
-        <div class="mt-12">
-            <x-button class="w-full" size="lg" type="primary" tag="a" href="#form">Принять приглашение</x-button>
-        </div>
-    @endif
-    -->
 </section>
 
